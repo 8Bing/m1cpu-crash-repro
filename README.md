@@ -29,9 +29,10 @@ The tests in this repo were run on:
 - **OS:** macOS (Tahoe 26.3.2)
 - **Architecture:** arm64
 - **Go version:** `go1.24.10` (installed via Homebrew `go@1.24`)
-- **go-m1cpu version:** `github.com/shoenig/go-m1cpu@v0.1.6`
-
-The `go-m1cpu` version matches the version referenced in the original crash log from Anytype.
+- **go-m1cpu version:**
+  - `github.com/shoenig/go-m1cpu@v0.1.6`
+    - The `go-m1cpu` version matches the version referenced in the original crash log from Anytype.
+  - `github.com/shoenig/go-m1cpu@v0.2.0`
 
 ---
 
