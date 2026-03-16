@@ -150,30 +150,23 @@ This repo is a starting point for:
 
 On my machine:
 
-- go-m1cpu v0.1.6
+- **go-m1cpu v0.1.6**
+  - Used by Anytype at the time of the original crash.
+  - Anytype desktop app crashed on startup with:
+    - `SIGSEGV: segmentation violation`
+    - `signal arrived during cgo execution`
+    - stack trace including `_Cfunc_initialize()` and `cpu.go` at v0.1.6.
 
- ▫ Used by Anytype at the time of the original crash.
+- **go-m1cpu v0.2.0**
+  - Includes the commit `fix segfault with m5 cpu (#27)`.
+  - When I run this minimal repro project with `v0.2.0`, I still see a crash:
+    - `SIGTRAP: trace trap`
+    - `signal arrived during cgo execution`
+    - stack trace still points to `_Cfunc_initialize()` in `cpu.go` at v0.2.0.
 
- ▫ Anytype desktop app crashed on startup with:
+This suggests that the M5-related issues may not be fully resolved in my particular environment yet, and that further investigation or additional fixes/workarounds might be needed.
 
- ⁃ ‎`SIGSEGV: segmentation violation`
-
- ⁃ ‎`signal arrived during cgo execution`
-
- ⁃ stack trace including ‎`_Cfunc_initialize()` and ‎`cpu.go` at v0.1.6.
-
-- go-m1cpu v0.2.0
-
- ▫ Includes the commit ‎`fix segfault with m5 cpu (#27)`.
-
- ▫ When I run this minimal repro project with ‎`v0.2.0`, I still see a crash:
-
- ⁃ ‎`SIGTRAP: trace trap`
-
- ⁃ ‎`signal arrived during cgo execution`
-
- ⁃ stack trace still points to ‎`_Cfunc_initialize()` in ‎`cpu.go` at v0.2.0.
-
+---
 
 ## Next steps / ideas
 
